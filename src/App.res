@@ -23,7 +23,7 @@ let default = (props: props): React.element => {
   let router = Next.Router.useRouter()
 
   let content = React.createElement(component, pageProps)
-
+  let countries = FetchCountries.getAll()
   switch router.route {
   | _ => <MainLayout> content </MainLayout>
   }

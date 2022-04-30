@@ -1,15 +1,19 @@
+@decco @deriving(jsConverter)
 type name = {
   common: string,
   official: string,
 }
+@decco @deriving(jsConverter)
 type flagImg = {
   png: string,
   svg: string,
 }
+@decco @deriving(jsConverter)
 type maps = {
   googleMaps: string,
   openStreetMaps: string,
 }
+@decco @deriving(jsConverter)
 type country = {
   name: name,
   independant: bool,
