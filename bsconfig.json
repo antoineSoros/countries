@@ -3,7 +3,12 @@
   "namespace": false,
   "reason": { "react-jsx": 3 },
   "refmt": 3,
-  "bs-dependencies": ["@rescript/react", "bs-fetch", "decco"],
+  "bs-dependencies": [
+    "@rescript/react",
+    "bs-fetch",
+    "decco",
+    "@glennsl/bs-json"
+  ],
   "ppx-flags": [],
   "sources": [{ "dir": "src", "subdirs": true }],
   "package-specs": {

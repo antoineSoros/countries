@@ -3,12 +3,10 @@
 import * as React from "react";
 import * as MainLayout from "./layouts/MainLayout.mjs";
 import * as Router from "next/router";
-import * as FetchCountries from "./helpers/FetchCountries.mjs";
 
 function $$default(props) {
   Router.useRouter();
   var content = React.createElement(props.Component, props.pageProps);
-  FetchCountries.getAll(undefined);
   return React.createElement(MainLayout.make, {
               children: content
             });

@@ -26,6 +26,8 @@ type country = {
   maps: maps,
   population: int,
 }
+
+type t = array<country>
 //example answer:
 /*
   {
