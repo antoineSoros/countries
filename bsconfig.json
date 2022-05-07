@@ -3,11 +3,14 @@
   "namespace": false,
   "reason": { "react-jsx": 3 },
   "refmt": 3,
-  "bs-dependencies": ["@rescript/react"],
-  "ppx-flags": [],
-  "sources": [
-    { "dir": "src", "subdirs": true }
+  "bs-dependencies": [
+    "@rescript/react",
+    "bs-fetch",
+    "decco",
+    "@glennsl/bs-json"
   ],
+  "ppx-flags": [],
+  "sources": [{ "dir": "src", "subdirs": true }],
   "package-specs": {
     "module": "es6",
     "in-source": true
