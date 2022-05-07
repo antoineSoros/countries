@@ -25,6 +25,7 @@ type t = {
   flags: flagImg,
   maps: maps,
   population: int,
+  cioc: string,
 }
 
 type countries = array<t>

@@ -17,3 +17,18 @@ let getAll = () => {
   ->Js.Promise.then_(json => decodeArray(json), _)
   ->Js.Promise.then_(json => json->toTypeArrayCountry->Js.Promise.resolve, _)
 }
+let getBycioc = code => {
+  let endpointApi = apiUrl ++ "alpha?codes=" ++ code
+  let decodeArray = response => {
+    switch Js.Json.decodeArray(response) {
+    | Some(decodedRes) => Js.Promise.resolve(decodedRes)
+
+    | None => Js.Promise.resolve([])
+    }
+  }
+
+  Fetch.fetch(endpointApi)
+  ->Js.Promise.then_(Fetch.Response.json, _)
+  ->Js.Promise.then_(json => decodeArray(json), _)
+  ->Js.Promise.then_(json => json->toTypeArrayCountry->Js.Promise.resolve, _)
+}

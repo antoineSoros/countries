@@ -26,10 +26,30 @@ function getAll(param) {
             });
 }
 
+function getBycioc(code) {
+  var endpointApi = "https://restcountries.com/v3.1/alpha?codes=" + code;
+  var __x = fetch(endpointApi);
+  var __x$1 = __x.then(function (prim) {
+        return prim.json();
+      });
+  var __x$2 = __x$1.then(function (json) {
+        var decodedRes = Js_json.decodeArray(json);
+        if (decodedRes !== undefined) {
+          return Promise.resolve(decodedRes);
+        } else {
+          return Promise.resolve([]);
+        }
+      });
+  return __x$2.then(function (json) {
+              return Promise.resolve(json);
+            });
+}
+
 export {
   apiUrl ,
   PostError ,
   getAll ,
+  getBycioc ,
   
 }
 /* No side effect */

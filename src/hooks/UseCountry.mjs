@@ -2,6 +2,7 @@
 
 import * as Curry from "rescript/lib/es6/curry.js";
 import * as React from "react";
+import * as Belt_Array from "rescript/lib/es6/belt_Array.js";
 import * as FetchCountries from "../helpers/FetchCountries.mjs";
 
 function make(param) {
@@ -22,8 +23,37 @@ function make(param) {
   return match[0];
 }
 
+var All = {
+  make: make
+};
+
+function make$1(code) {
+  var match = React.useState(function () {
+        return [];
+      });
+  var setCountries = match[1];
+  React.useEffect((function () {
+          if (code !== undefined) {
+            var __x = FetchCountries.getBycioc(code);
+            __x.then(function (res) {
+                  Curry._1(setCountries, (function (param) {
+                          return res;
+                        }));
+                  return Promise.resolve(undefined);
+                });
+          }
+          
+        }), [code]);
+  return Belt_Array.get(match[0], 0);
+}
+
+var ByCioc = {
+  make: make$1
+};
+
 export {
-  make ,
+  All ,
+  ByCioc ,
   
 }
 /* react Not a pure module */

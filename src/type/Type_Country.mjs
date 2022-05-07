@@ -54,7 +54,8 @@ function tToJs(param) {
           flag: param.flag,
           flags: param.flags,
           maps: param.maps,
-          population: param.population
+          population: param.population,
+          cioc: param.cioc
         };
 }
 
@@ -69,7 +70,8 @@ function tFromJs(param) {
           flag: param.flag,
           flags: param.flags,
           maps: param.maps,
-          population: param.population
+          population: param.population,
+          cioc: param.cioc
         };
 }
 

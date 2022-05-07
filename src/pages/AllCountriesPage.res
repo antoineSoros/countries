@@ -5,7 +5,7 @@ let sortByName: (Type_Country.t, Type_Country.t) => int = (c1, c2) =>
   Js.String.localeCompare(c2.name.common, c1.name.common)->Belt.Int.fromFloat
 
 let default = () => {
-  let countriesData = UseCountry.make()
+  let countriesData = UseCountry.All.make()
   let countries =
     countriesData
     ->Js.Array.sortInPlaceWith(sortByName, _)

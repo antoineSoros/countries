@@ -21,7 +21,7 @@
     "start": "next start -p $PORT",
     "res:build": "rescript",
     "res:clean": "rescript clean",
-    "res:start": "rescript build -w"
+    "start:rescript": "rescript build -w"
   },
   "devDependencies": {
     "@rescript/react": "0.10.3",

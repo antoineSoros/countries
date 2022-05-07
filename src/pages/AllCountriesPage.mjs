@@ -17,7 +17,7 @@ function sortByName(c1, c2) {
 }
 
 function $$default(param) {
-  var countriesData = UseCountry.make(undefined);
+  var countriesData = UseCountry.All.make(undefined);
   var countries = Belt_Array.map(countriesData.sort(sortByName), (function (country) {
           return React.createElement(P.make, {
                       children: null,
