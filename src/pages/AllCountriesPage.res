@@ -1,3 +1,4 @@
+//type props = Type_Country.t
 let default = () => {
   let countriesData = UseCountry.make()
   let countries =
@@ -8,3 +9,9 @@ let default = () => {
     )->React.array
   <> {countries} </>
 }
+//@Todo: fix this error befor using getServerSideProps 'Error: Error serializing props returned from `getServerSideProps` in "/all-countries".
+//Reason: Props must be returned as a plain object from getServerSideProps: `{ props: { ... } }`.
+// let getServerSideProps = _ctx => {
+//   let data = FetchCountries.getAll()
+//   Js.Promise.resolve({"props": data})
+// }
