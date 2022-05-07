@@ -2,11 +2,17 @@
 
 import * as H1 from "./components/H1/H1.mjs";
 import * as React from "react";
+import Link from "next/link";
 
 function $$default(param) {
   return React.createElement(React.Fragment, undefined, React.createElement(H1.make, {
                   title: "Countries"
-                }));
+                }), React.createElement("h2", {
+                  className: "text-lg underline text-center text-xl"
+                }, React.createElement(Link, {
+                      href: "/all-countries",
+                      children: "All"
+                    })));
 }
 
 export {

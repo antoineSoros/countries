@@ -14,7 +14,7 @@ type maps = {
   openStreetMaps: string,
 }
 @decco @deriving(jsConverter)
-type country = {
+type t = {
   name: name,
   independant: bool,
   unMember: bool,
@@ -27,7 +27,7 @@ type country = {
   population: int,
 }
 
-type t = array<country>
+type countries = array<t>
 //example answer:
 /*
   {

@@ -43,7 +43,7 @@ function mapsFromJs(param) {
         };
 }
 
-function countryToJs(param) {
+function tToJs(param) {
   return {
           name: param.name,
           independant: param.independant,
@@ -58,7 +58,7 @@ function countryToJs(param) {
         };
 }
 
-function countryFromJs(param) {
+function tFromJs(param) {
   return {
           name: param.name,
           independant: param.independant,
@@ -80,8 +80,8 @@ export {
   flagImgFromJs ,
   mapsToJs ,
   mapsFromJs ,
-  countryToJs ,
-  countryFromJs ,
+  tToJs ,
+  tFromJs ,
   
 }
 /* No side effect */

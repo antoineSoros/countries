@@ -1,5 +1,5 @@
 let apiUrl = "https://restcountries.com/v3.1/"
-external toTypeArrayCountry: array<Js.Json.t> => Type_Country.t = "%identity"
+external toTypeArrayCountry: array<Js.Json.t> => Type_Country.countries = "%identity"
 exception PostError(string)
 
 let getAll = () => {
