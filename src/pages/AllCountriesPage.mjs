@@ -3,23 +3,43 @@
 import * as P from "../components/P/P.mjs";
 import * as React from "react";
 import * as Belt_Array from "rescript/lib/es6/belt_Array.js";
+import * as Type_Class from "../type/Type_Class.mjs";
 import * as UseCountry from "../hooks/UseCountry.mjs";
+import * as Util_Class from "../helpers/Util_Class.mjs";
+
+var classNameCountry = Util_Class.joinClass([
+      Type_Class.flex,
+      Type_Class.makeJustify("Center")
+    ]);
+
+var className = Util_Class.joinClass([
+      Type_Class.grid,
+      Type_Class.makeGridTempCol(4)
+    ]);
+
+function sortByName(c1, c2) {
+  return c1.name.common.localeCompare(c2.name.common) | 0;
+}
 
 function $$default(param) {
   var countriesData = UseCountry.make(undefined);
-  var countries = Belt_Array.map(countriesData, (function (country) {
+  var countries = Belt_Array.map(countriesData.sort(sortByName), (function (country) {
           return React.createElement(P.make, {
-                      className: "",
                       children: null,
                       key: country.name.common
                     }, country.flag, country.name.common);
         }));
-  return React.createElement(React.Fragment, undefined, countries);
+  return React.createElement(React.Fragment, undefined, React.createElement("div", {
+                  className: className
+                }, countries));
 }
 
 export {
+  classNameCountry ,
+  className ,
+  sortByName ,
   $$default ,
   $$default as default,
   
 }
-/* P Not a pure module */
+/* classNameCountry Not a pure module */
