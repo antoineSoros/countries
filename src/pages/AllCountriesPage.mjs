@@ -7,11 +7,6 @@ import * as Type_Class from "../type/Type_Class.mjs";
 import * as UseCountry from "../hooks/UseCountry.mjs";
 import * as Util_Class from "../helpers/Util_Class.mjs";
 
-var classNameCountry = Util_Class.joinClass([
-      Type_Class.flex,
-      Type_Class.makeJustify("Center")
-    ]);
-
 var className = Util_Class.joinClass([
       Type_Class.grid,
       Type_Class.makeGridTempCol(4)
@@ -27,7 +22,7 @@ function $$default(param) {
           return React.createElement(P.make, {
                       children: null,
                       key: country.name.common
-                    }, country.flag, country.name.common);
+                    }, country.flag + " ", country.name.common);
         }));
   return React.createElement(React.Fragment, undefined, React.createElement("div", {
                   className: className
@@ -35,11 +30,10 @@ function $$default(param) {
 }
 
 export {
-  classNameCountry ,
   className ,
   sortByName ,
   $$default ,
   $$default as default,
   
 }
-/* classNameCountry Not a pure module */
+/* className Not a pure module */
