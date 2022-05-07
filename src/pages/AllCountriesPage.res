@@ -10,9 +10,9 @@ let default = () => {
     countriesData
     ->Js.Array.sortInPlaceWith(sortByName, _)
     ->Belt.Array.map(country =>
-      <P key=country.name.common>
-        {(country.flag ++ " ")->React.string} {country.name.common->React.string}
-      </P>
+      <Next.Link href={"/country/" ++ country.cioc} key=country.name.common>
+        {(country.flag ++ " " ++ country.name.common)->React.string}
+      </Next.Link>
     )
     ->React.array
   <> <div className> {countries} </div> </>
